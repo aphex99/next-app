@@ -14,14 +14,14 @@ type TableProps = {
 
 export default function Table({ clients }: TableProps) {
   const table = useReactTable({
-    data: clients as Clients,
+    data: ((clients as Clients) ??= []),
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
 
   return (
-    <div className={'my-20'}>
-      <table>
+    <div className={'mt-20 mb-6 w-full'}>
+      <table className={'w-full'}>
         <thead className={'border-2'}>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
@@ -37,7 +37,7 @@ export default function Table({ clients }: TableProps) {
             </tr>
           ))}
         </thead>
-        <tbody className={'border-2'}>
+        <tbody className={'border-2 w-full'}>
           {table.getRowModel().rows.map((row, i) => (
             <tr
               key={row.id}

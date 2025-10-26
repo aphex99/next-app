@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 Users Table — Next.js App
 
-## Getting Started
+Приложение, разработанное для практики **SSR**, **работы с базой данных** и **интеграции API в Next.js**.  
+Проект демонстрирует работу с серверным рендерингом, получение данных с сервера, пагинацию.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Основная идея
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Приложение отображает таблицу пользователей, загружаемых из базы данных.  
+Реализована серверная пагинация — данные загружаются с бэкенда постранично.  
+Клиент получает готовую HTML-страницу (SSR), что ускоряет первую отрисовку и улучшает SEO.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Технологии
 
-## Learn More
+- **Next.js** — серверный рендеринг (SSR)
+- **TypeScript** — строгая типизация  
+- **Supabase** — хранение пользователей и постраничная выборка  
+- **Tailwind** — стилизация компонентов
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Реализовано
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Загрузка данных пользователей с сервера (SSR)  
+- Серверная пагинация через базу данных   
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🗄 Архитектура
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+## 🧩 Что планируется
+
+- Добавить поиск и фильтрацию пользователей  
+- Реализовать сортировку и CRUD-операции  
+- Добавить авторизацию и роли пользователей  
