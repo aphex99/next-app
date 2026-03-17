@@ -1,8 +1,8 @@
 'use client';
 
-import {Clients} from '@/src/entities/clients/types';
+import { Clients } from '@/src/entities/clients/types';
 
-import {asyncThunkCreator, buildCreateSlice} from '@reduxjs/toolkit';
+import { asyncThunkCreator, buildCreateSlice } from '@reduxjs/toolkit';
 
 const initialState: Clients = [
   {
@@ -14,7 +14,7 @@ const initialState: Clients = [
 ];
 
 const createAppSlice = buildCreateSlice({
-  creators: {asyncThunk: asyncThunkCreator},
+  creators: { asyncThunk: asyncThunkCreator },
 });
 
 const clientsSlice = createAppSlice({

@@ -4,8 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-module.exports = {
-  eslint: {},
-};
+module.exports = {};
 
 export default nextConfig;

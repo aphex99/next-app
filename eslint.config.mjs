@@ -5,8 +5,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 import pluginPrettier from 'eslint-plugin-prettier';
-import {defineConfig} from 'eslint/config';
-import {FlatCompat} from '@eslint/eslintrc';
+import { defineConfig } from 'eslint/config';
+import { FlatCompat } from '@eslint/eslintrc';
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -31,9 +31,9 @@ export default defineConfig([
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        ecmaFeatures: {jsx: true},
+        ecmaFeatures: { jsx: true },
       },
-      globals: {...globals.browser, ...globals.node},
+      globals: { ...globals.browser, ...globals.node },
     },
     plugins: {
       js,
