@@ -41,7 +41,7 @@ const TableComponent = () => {
       }
     }
 
-    fetchData();
+    fetchData().finally();
   }, [currentPage]);
 
   if (!clientsData) return null;
