@@ -1,17 +1,14 @@
 'use client';
 
-import { Clients } from '@/src/entities/clients/types';
-import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
-import Table from '@/src/features/table/ui/Table/Table';
-import TablePagination from '@/src/features/table/ui/TablePagination/TablePagination';
 import { useEffect, useState } from 'react';
 
-type ClientsData = {
-  clients: Clients;
-  totalCount: number | null;
-};
+import { Client, ClientsData } from '@/src/entities/clients/types';
 
-function isClientsData(data: Clients, totalCount: number | null) {
+import Table from './ui/Table/Table';
+import { COUNT_PER_PAGE } from './model/consts';
+import TablePagination from './ui/TablePagination/TablePagination';
+
+function isClientsData(data: Client[], totalCount: number | null) {
   return (
     totalCount !== null &&
     Array.isArray(data) &&

@@ -1,7 +1,7 @@
 import './globals.css';
-import NavLinks from '@/src/shared/ui/nav-links/nav-links';
-import { Lato } from 'next/font/google';
 import { ReactNode } from 'react';
+import { Lato } from 'next/font/google';
+import NavLinks from '@/src/shared/ui/nav-links/nav-links';
 
 const lato = Lato({
   weight: ['400', '700', '900'],

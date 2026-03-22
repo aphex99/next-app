@@ -1,4 +1,4 @@
-import TableComponent from '@/src/features/table/TableComponent';
+import TableComponent from '@/src/pages/table/TableComponent';
 
 export default async function HomePage() {
   return (

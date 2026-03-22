@@ -1,6 +1,6 @@
 'use client';
 
-import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
+import { COUNT_PER_PAGE } from '../../model/consts';
 
 type TablePagination = {
   currentPage: number;
