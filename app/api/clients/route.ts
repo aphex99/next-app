@@ -1,9 +1,8 @@
-import { createClient } from '@/src/shared/supabase/server';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
-  console.log('API HIT');
+import { createClient } from '@/src/shared/supabase/server';
 
+export async function GET(request: NextRequest) {
   try {
     const { searchParams } = request.nextUrl;
 

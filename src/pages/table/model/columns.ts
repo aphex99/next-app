@@ -1,7 +1,6 @@
-'use client';
+import { ColumnDef } from '@tanstack/react-table';
 
 import { Client } from '@/src/entities/clients/types';
-import { ColumnDef } from '@tanstack/react-table';
 
 export type ColumnDefUser = ColumnDef<Client>[];
 

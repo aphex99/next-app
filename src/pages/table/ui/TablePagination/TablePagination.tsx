@@ -1,6 +1,6 @@
 'use client';
 
-import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
+import { COUNT_PER_PAGE } from '../../model/consts';
 
 type TablePagination = {
   currentPage: number;
@@ -31,7 +31,7 @@ const TablePagination = ({
       {pageNumbers.map((num) => {
         return (
           <li
-            className={`${num === currentPage && 'text-red-600 bg-yellow-200'} w-6 text-center rounded-xs cursor-pointer select-none`}
+            className={`${num === currentPage && 'text-white bg-gray-400'} w-6 text-center rounded-xs cursor-pointer select-none`}
             key={num}
             onClick={() => onSetCurrentPage(num)}
           >
