@@ -27,14 +27,10 @@ const TablePagination = ({
   }
 
   return (
-    <ul className={`flex gap-2`}>
+    <ul>
       {pageNumbers.map((num) => {
         return (
-          <li
-            className={`${num === currentPage && 'text-white bg-gray-400'} w-6 text-center rounded-xs cursor-pointer select-none`}
-            key={num}
-            onClick={() => onSetCurrentPage(num)}
-          >
+          <li key={num} onClick={() => onSetCurrentPage(num)}>
             {num}
           </li>
         );

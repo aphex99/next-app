@@ -44,7 +44,7 @@ const TableComponent = () => {
   if (!clientsData) return null;
 
   return (
-    <div className={'flex flex-col items-center w-xl'}>
+    <div>
       <Table clients={clientsData.clients} />
       <TablePagination
         currentPage={currentPage}
