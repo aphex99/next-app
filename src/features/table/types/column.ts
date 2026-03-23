@@ -16,6 +16,6 @@ export const columns: ColumnDefUser = [
   },
   {
     accessorKey: 'type',
-    header: 'Company Type',
+    header: 'Type',
   },
 ];

@@ -1,7 +1,6 @@
 'use client';
 
 import { Clients } from '@/src/entities/clients/types';
-import { getPaginationData } from '@/src/features/table/api/getPaginationData';
 import { COUNT_PER_PAGE } from '@/src/features/table/model/consts';
 import Table from '@/src/features/table/ui/Table/Table';
 import TablePagination from '@/src/features/table/ui/TablePagination/TablePagination';
@@ -29,10 +28,11 @@ const TableComponent = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const { data, totalCount } = await getPaginationData(
-          currentPage,
-          COUNT_PER_PAGE,
+        const res = await fetch(
+          `/api/clients?page=${currentPage}&perPage=${COUNT_PER_PAGE}`,
         );
+        const { data, totalCount } = await res.json();
+
         if (isClientsData(data, totalCount)) {
           setClientsData({ clients: data, totalCount: totalCount });
         }
@@ -41,7 +41,7 @@ const TableComponent = () => {
       }
     }
 
-    fetchData();
+    fetchData().finally();
   }, [currentPage]);
 
   if (!clientsData) return null;
@@ -54,6 +54,7 @@ const TableComponent = () => {
         setCurrentPage={setCurrentPage}
         totalCount={clientsData.totalCount}
       />
+      <hr />
     </div>
   );
 };

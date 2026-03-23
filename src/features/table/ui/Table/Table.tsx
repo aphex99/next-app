@@ -25,7 +25,6 @@ export default function Table({ clients }: TableProps) {
         <thead className={'border-2'}>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
-              <th></th>
               {headerGroup.headers.map((header) => (
                 <th key={header.id} colSpan={header.colSpan} className={'p-2'}>
                   {flexRender(
