@@ -1,7 +1,6 @@
 import './globals.css';
-import NavLinks from '@/src/shared/ui/nav-links/nav-links';
-import { Lato } from 'next/font/google';
 import { ReactNode } from 'react';
+import { Lato } from 'next/font/google';
 
 const lato = Lato({
   weight: ['400', '700', '900'],
@@ -19,10 +18,7 @@ export default function RootLayout({
         <title>NXTABLE</title>
         <link rel="icon" href="/favicon/favicon.svg" sizes="any" />
       </head>
-      <body>
-        <NavLinks />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

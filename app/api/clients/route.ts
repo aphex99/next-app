@@ -1,14 +1,14 @@
-import { createClient } from '@/src/shared/supabase/server';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
-  console.log('API HIT');
+import { createClient } from '@/src/shared/supabase/server';
 
+export async function GET(request: NextRequest) {
   try {
     const { searchParams } = request.nextUrl;
 
     const page = Number(searchParams.get('page') ?? 1);
     const perPage = Number(searchParams.get('perPage') ?? 5);
+
     const from = (page - 1) * perPage;
     const to = from + perPage - 1;
 

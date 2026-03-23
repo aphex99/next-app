@@ -1,5 +1,5 @@
 const service = {
-  plugins: ['@tailwindcss/postcss'],
+  plugins: [],
 };
 
 export default service;
