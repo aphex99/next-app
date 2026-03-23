@@ -1,6 +1,12 @@
+/** @jsxImportSource @emotion/react */
 'use client';
 
 import { COUNT_PER_PAGE } from '../../model/consts';
+
+import {
+  StyledPaginationButton,
+  wrapperPaginationStyles,
+} from './TablePagination.styles';
 
 type TablePagination = {
   currentPage: number;
@@ -9,8 +15,8 @@ type TablePagination = {
 };
 
 const TablePagination = ({
-  currentPage,
   setCurrentPage,
+  currentPage,
   totalCount,
 }: TablePagination) => {
   const pageNumbers = [];
@@ -27,15 +33,13 @@ const TablePagination = ({
   }
 
   return (
-    <ul className={`flex gap-2`}>
+    <ul css={wrapperPaginationStyles}>
       {pageNumbers.map((num) => {
         return (
-          <li
-            className={`${num === currentPage && 'text-white bg-gray-400'} w-6 text-center rounded-xs cursor-pointer select-none`}
-            key={num}
-            onClick={() => onSetCurrentPage(num)}
-          >
-            {num}
+          <li key={num} onClick={() => onSetCurrentPage(num)}>
+            <StyledPaginationButton active={currentPage === num}>
+              {num}
+            </StyledPaginationButton>
           </li>
         );
       })}
