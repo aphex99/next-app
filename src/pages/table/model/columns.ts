@@ -6,12 +6,8 @@ export type ColumnDefUser = ColumnDef<Client>[];
 
 export const columns: ColumnDefUser = [
   {
-    accessorKey: 'id',
-    header: 'id',
-  },
-  {
     accessorKey: 'name',
-    header: 'Name',
+    header: 'Account name',
   },
   {
     accessorKey: 'email',

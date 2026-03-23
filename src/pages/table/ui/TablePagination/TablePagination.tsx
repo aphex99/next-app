@@ -1,6 +1,12 @@
+/** @jsxImportSource @emotion/react */
 'use client';
 
 import { COUNT_PER_PAGE } from '../../model/consts';
+
+import {
+  StyledPaginationButton,
+  wrapperPaginationStyles,
+} from './TablePagination.styles';
 
 type TablePagination = {
   currentPage: number;
@@ -9,8 +15,8 @@ type TablePagination = {
 };
 
 const TablePagination = ({
-  currentPage,
   setCurrentPage,
+  currentPage,
   totalCount,
 }: TablePagination) => {
   const pageNumbers = [];
@@ -27,11 +33,13 @@ const TablePagination = ({
   }
 
   return (
-    <ul>
+    <ul css={wrapperPaginationStyles}>
       {pageNumbers.map((num) => {
         return (
           <li key={num} onClick={() => onSetCurrentPage(num)}>
-            {num}
+            <StyledPaginationButton active={currentPage === num}>
+              {num}
+            </StyledPaginationButton>
           </li>
         );
       })}

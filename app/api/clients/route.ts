@@ -8,6 +8,7 @@ export async function GET(request: NextRequest) {
 
     const page = Number(searchParams.get('page') ?? 1);
     const perPage = Number(searchParams.get('perPage') ?? 5);
+
     const from = (page - 1) * perPage;
     const to = from + perPage - 1;
 

@@ -1,12 +1,15 @@
+/** @jsxImportSource @emotion/react */
 'use client';
 
+import { COUNT_PER_PAGE } from '@/src/pages/table/model/consts';
 import { useEffect, useState } from 'react';
 
 import { Client, ClientsData } from '@/src/entities/clients/types';
 
 import Table from './ui/Table/Table';
-import { COUNT_PER_PAGE } from './model/consts';
 import TablePagination from './ui/TablePagination/TablePagination';
+
+import { h2Style, hrStyle, wrapperStyle } from './TableComponent.styles';
 
 function isClientsData(data: Client[], totalCount: number | null) {
   return (
@@ -44,14 +47,15 @@ const TableComponent = () => {
   if (!clientsData) return null;
 
   return (
-    <div>
+    <div css={wrapperStyle}>
+      <h2 css={h2Style}>Accounts</h2>
+      <hr css={hrStyle} />
       <Table clients={clientsData.clients} />
       <TablePagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         totalCount={clientsData.totalCount}
       />
-      <hr />
     </div>
   );
 };
