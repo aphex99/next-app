@@ -46,7 +46,7 @@ export default function Table({ clients }: TableProps) {
         ))}
       </thead>
       <tbody>
-        {table.getRowModel().rows.map((row, i) => (
+        {table.getRowModel().rows.map((row) => (
           <tr key={row.id} css={rowStyle}>
             {row.getVisibleCells().map((cell) => (
               <td key={cell.id} css={cellStyle}>
